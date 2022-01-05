@@ -1,32 +1,30 @@
 package aplicacao;
 
+import java.util.HashMap;
 import java.util.Map;
-import java.util.TreeMap;
+
+import entities.Product;
 
 public class Programa {
 
 	public static void main(String[] args) {
 		
-		Map<String, String> cookies = new TreeMap<>();
+		Map<Product, Double> stock = new HashMap<>();
 		
-		cookies.put("username", "Maria");
-		cookies.put("email", "maria@gmail.com");
-		cookies.put("phone","99711122");
-		cookies.put("rg","1010911018");
+		Product p1 = new Product("Tv", 900.0);
+		Product p2 = new Product("Notebook", 1200.0);
+		Product p3 = new Product("Tablet", 400.0);
 		
-		cookies.remove("email");
-		cookies.put("phone","99771133");
+		stock.put(p1, 10000.0);
+		stock.put(p2, 20000.0);
+		stock.put(p3, 15000.0);
 		
-		System.out.println("Contem 'phone' key: " + cookies.containsKey("CPF"));
-		System.out.println("phone number: " + cookies.get("phone"));
-		System.out.println("Email: " + cookies.get("email"));
-		System.out.println("Size: " + cookies.size());
+		Product ps = new Product("Tv", 900.0);
 		
-		System.out.println("TODOS COOKIES:");
-		for(String key : cookies.keySet()) {
-			System.out.println(key + "= " + cookies.get(key));
+		System.out.println("Contains 'ps' key: " + stock.containsKey(ps));
+		
 		}
 
 	}
 
-}
+
